@@ -2,7 +2,7 @@
 
 namespace LineComparisonComputation
 {
-    class CheckEquality
+    class ComparisonLines
     {
         static void Main(string[] args)
         {
@@ -36,17 +36,20 @@ namespace LineComparisonComputation
             Console.WriteLine("Length of (x, y) co-ordinates :  " + LengthofLine1);  // Display Length1
             Console.WriteLine("Length of (z, k) co-ordinates :  " + LengthofLine2);  // Display Length2
 
-            bool result= (LengthofLine1).Equals(LengthofLine2);
-            Console.WriteLine(result);
-            if (result==true)
+            double Result = LengthofLine1.CompareTo(LengthofLine2);  //compareTo method to compare 2 Lengths is LengthofLine1 and LengthofLine2
+            Console.WriteLine(Result);
+            if (Result == 0)                       //  linea are equal 
             {
-                Console.WriteLine("The lines are equal");
+                Console.WriteLine("Two Lines are equal ");
+            }
+            else if (Result > 0)    //greater than the other line.
+            {
+                Console.WriteLine("Line one is Greater than line Two");
             }
             else
             {
-                Console.WriteLine("The lines are not equal");
+                Console.WriteLine("Line one is Smaller than Line two");
             }
-            
 
         }
     }
